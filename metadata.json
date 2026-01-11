@@ -1,0 +1,7 @@
+{
+  "name": "All HVAC Depot LLC - San Ramon",
+  "description": "A sleek, modern, and minimalistic website for All HVAC Depot LLC, providing premium HVAC services in San Ramon, CA.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
