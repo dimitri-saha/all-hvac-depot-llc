@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Test</title>
+</head>
+<body>
+    <div id="test-root"></div>
+    <script type="module">
+        console.log('Test React module loading...');
+        
+        // Simple test to see if basic JavaScript works
+        const rootElement = document.getElementById('test-root');
+        console.log('Test root element:', rootElement);
+        
+        if (rootElement) {
+            rootElement.innerHTML = '<h1 style="color: red;">BASIC HTML WORKING!</h1><p>If you see this, basic HTML/JS is working.</p>';
+            console.log('Basic HTML test completed successfully');
+        } else {
+            console.error('Test root element not found');
+        }
+    </script>
+</body>
+</html>

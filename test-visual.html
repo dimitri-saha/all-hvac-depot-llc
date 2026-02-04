@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Test</title>
+</head>
+<body>
+    <h1>Visual JavaScript Test</h1>
+    <div id="test-root" style="border: 2px solid blue; padding: 20px; margin: 20px;">
+        Original content - if this changes, JavaScript is working
+    </div>
+    
+    <script type="module">
+        // Immediate DOM manipulation to test if JavaScript runs
+        const testRoot = document.getElementById('test-root');
+        if (testRoot) {
+            testRoot.innerHTML = '<h2 style="color: green; background: yellow; padding: 10px;">✅ JAVASCRIPT IS WORKING!</h2><p>If you see this green text on yellow background, JavaScript is executing correctly.</p>';
+            testRoot.style.border = '3px solid green';
+        }
+    </script>
+</body>
+</html>

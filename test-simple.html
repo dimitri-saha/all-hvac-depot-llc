@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Simple JavaScript Test</h1>
+    <div id="test-root">Original content</div>
+    
+    <script type="module">
+        console.log('Simple test script loaded');
+        const testRoot = document.getElementById('test-root');
+        console.log('Test root element:', testRoot);
+        
+        if (testRoot) {
+            testRoot.innerHTML = '<h2 style="color: green;">JAVASCRIPT IS WORKING!</h2>';
+            console.log('Test content updated');
+        } else {
+            console.error('Test root element not found');
+        }
+    </script>
+</body>
+</html>

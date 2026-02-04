@@ -5,24 +5,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetail from './pages/ServiceDetail';
 import Chatbot from './components/Chatbot';
 import { Star } from 'lucide-react';
 
+console.log('App.tsx loaded');
+
 // Minimal Page stubs for layout consistency
-const ServicesPage = () => (
-  <div className="pt-32 pb-20 text-center max-w-7xl mx-auto px-4">
-    <h1 className="text-5xl font-bold mb-8">Our Services</h1>
-    <p className="text-xl text-gray-500 max-w-2xl mx-auto">Explore our range of heating and cooling solutions for San Ramon residents.</p>
-    <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-       {['Repair', 'Installation', 'Maintenance', 'Emergency', 'Duct Cleaning'].map(s => (
-         <div key={s} className="bg-light-grey p-12 rounded-3xl border border-gray-100">
-            <h3 className="text-2xl font-bold mb-4">{s}</h3>
-            <p className="text-gray-500">Premium {s.toLowerCase()} services performed by certified technicians.</p>
-         </div>
-       ))}
-    </div>
-  </div>
-);
 
 const TestimonialsPage = () => {
   const realReviews = [
@@ -53,14 +43,14 @@ const TestimonialsPage = () => {
       <div className="space-y-12">
         {realReviews.map((review, i) => (
           <div key={i} className="max-w-2xl mx-auto bg-white p-10 rounded-3xl border border-gray-100 shadow-sm text-left">
-             <div className="flex mb-4">
-                {[...Array(review.stars)].map((_, starIdx) => (
-                  <Star key={starIdx} size={16} className="text-black fill-current" />
-                ))}
-              </div>
-             <p className="text-lg italic text-gray-700 mb-6">"{review.quote}"</p>
-             <div className="font-bold">{review.name}</div>
-             <div className="text-sm text-gray-400">{review.location}</div>
+            <div className="flex mb-4">
+              {[...Array(review.stars)].map((_, starIdx) => (
+                <Star key={starIdx} size={16} className="text-black fill-current" />
+              ))}
+            </div>
+            <p className="text-lg italic text-gray-700 mb-6">"{review.quote}"</p>
+            <div className="font-bold">{review.name}</div>
+            <div className="text-sm text-gray-400">{review.location}</div>
           </div>
         ))}
       </div>
@@ -74,11 +64,11 @@ const ContactPage = () => (
       <h1 className="text-5xl font-bold">Contact Us</h1>
     </div>
     <div className="max-w-7xl mx-auto pb-20 px-4">
-       <div className="bg-light-grey p-12 rounded-3xl text-center">
-          <p className="text-2xl font-semibold mb-8">Need immediate help?</p>
-          <a href="tel:9253102505" className="text-4xl font-bold block mb-4 underline">(925) 310-2505</a>
-          <p className="text-gray-500">We are available 24/7 for emergency HVAC services.</p>
-       </div>
+      <div className="bg-light-grey p-12 rounded-3xl text-center">
+        <p className="text-2xl font-semibold mb-8">Need immediate help?</p>
+        <a href="tel:9253102505" className="text-4xl font-bold block mb-4 underline">(925) 310-2505</a>
+        <p className="text-gray-500">We are available 24/7 for emergency HVAC services.</p>
+      </div>
     </div>
   </div>
 );
@@ -93,6 +83,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
